@@ -16,10 +16,10 @@
                         <div class="p-6 w-full">
                             @if($doctor->image()->count())
                                 <img src="{{ asset('storage/' . $doctor->image()->first()->file_path) }}"
-                                     class=" w-full object-cover h-40 w-96 rounded ">
+                                     class=" w-full object-cover h-96 w-96 rounded ">
                             @else
                                 <img src="https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif"
-                                     class="w-full object-cover h-40 w-96  rounded">
+                                     class="w-full object-cover  h-96 w-96  rounded">
                             @endif
                         </div>
                         <div class="w-full p-6">

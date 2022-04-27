@@ -8,6 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class AppointmentController extends Controller
 {
@@ -61,7 +62,7 @@ class AppointmentController extends Controller
     {
         $appointments = Doctor::find($id)->appointments;
 
-        $appointmentsDates = Appointment::distinct()->get('date');
+        $appointmentsDates = Appointment::distinct()->get('date')->paginate(10);
 
         return view('appointments.list', compact('appointments', 'appointmentsDates'));
     }

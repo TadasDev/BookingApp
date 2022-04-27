@@ -15,29 +15,32 @@
                     <x-success-message/>
 
                     <div class=" p-6 h-screen ">
-                        <div class="max-h-screen flex flex-wrap">
-
-                            <x-time-slots/>
-
-                            <div class="w-full flex flex-wrap">
+                        <div class="max-h-screen flex flex-wrap ">
+                            <div class="p-6 w-full">
+                                {{$appointmentsDates->links()}}
+                            </div>
+                            <div class="w-full flex flex-wrap justify-center ">
                                 @foreach($appointmentsDates as $appointmentsDate)
-                                    <div class="border border-gray-200 text-center text-xl bg-gray-100 w-2/12">
+
+                                    <x-time-slots/>
+
+                                    <div class="border border-gray-200 text-center text-xl bg-gray-100 w-2/12 pb-10">
                                         {{$appointmentsDate->date}}
-                                        @foreach($appointments->where('date',$appointmentsDate->date) as $appointment)
+                                        {{Carbon\Carbon::parse($appointmentsDate->date)->format( 'l' )}}
+                                        @foreach($appointments->where('date',$appointmentsDate->date) as $appointment )
                                             <div class="w-full">
                                                 <form method="POST"
                                                       action=""
-                                                      class="flex  ">
+                                                      class="flex flex-row">
                                                     @csrf
                                                     <input
                                                         name="patient_name"
                                                         value="{{$appointment->patient_name}}"
                                                         class=" w-full text-black-700 font-semi-bold p-2 border rounded">
-
                                                     <button
-                                                        style="background-color: #18324e"
+                                                        style="background-color: #8baedb"
                                                         class=" text-white font-semi-bold p-2 border  rounded">
-                                                        Book
+                                                        Save
                                                     </button>
                                                 </form>
                                             </div>
@@ -50,4 +53,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </x-app-layout>
