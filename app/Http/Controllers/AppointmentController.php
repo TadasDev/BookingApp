@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AppointmentUpdateRequest;
 use App\Models\Appointment;
 use App\Models\Doctor;
 use Illuminate\Contracts\Foundation\Application;
@@ -40,16 +41,7 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-
-        Appointment::create([
-            'doctor_id' => 62,
-            'approved' => true,
-            'date' => $request->date,
-            'time_slot' => $request->timeSlot
-        ]);
-
-        return redirect()->back()->with('message', 'booked successfully');
-
+        //
     }
 
     /**
@@ -83,11 +75,14 @@ class AppointmentController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(AppointmentUpdateRequest $request, Appointment $appointment)
     {
-        //
+        $appointment->update(['patient_name' => $request->patient_name,]);
+
+        return redirect()->back()->with('message', 'booked successfully');
+
     }
 
     /**

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Appointments') }}
+            {{ __('Appointments')  }}
         </h2>
     </x-slot>
 
@@ -16,38 +16,43 @@
 
                     <div class=" p-6 h-screen ">
                         <div class="max-h-screen flex flex-wrap ">
-                            <div class="p-6 w-full">
-                                {{$appointmentsDates->links()}}
-                            </div>
                             <div class="w-full flex flex-wrap justify-center ">
                                 @foreach($appointmentsDates as $appointmentsDate)
 
                                     <x-time-slots/>
 
                                     <div class="border border-gray-200 text-center text-xl bg-gray-100 w-2/12 pb-10">
+                                        {{Carbon\Carbon::parse($appointmentsDate->date)->dayName}}
                                         {{$appointmentsDate->date}}
-                                        {{Carbon\Carbon::parse($appointmentsDate->date)->format( 'l' )}}
-                                        @foreach($appointments->where('date',$appointmentsDate->date) as $appointment )
-                                            <div class="w-full">
+                                        <div class="w-full">
+                                            @foreach($appointments->where('date',$appointmentsDate->date) as $appointment )
                                                 <form method="POST"
-                                                      action=""
+                                                      action="{{route('appointment.update',$appointment)}}"
                                                       class="flex flex-row">
+                                                    @method('PUT')
                                                     @csrf
                                                     <input
                                                         name="patient_name"
                                                         value="{{$appointment->patient_name}}"
-                                                        class=" w-full text-black-700 font-semi-bold p-2 border rounded">
+                                                        @if( is_null($appointment->patient_name) )
+                                                            class=" w-full bg-green-100 text-black-700 font-semi-bold p-2 border rounded"
+                                                        @else
+                                                            class=" w-full bg-red-50 text-black-700 font-semi-bold p-2 border rounded"
+                                                        @endif>
                                                     <button
-                                                        style="background-color: #8baedb"
-                                                        class=" text-white font-semi-bold p-2 border  rounded">
+                                                        style="background-color: #e2c7af"
+                                                        class=" bg-amber-50 text-white font-semi-bold p-2 border  rounded">
                                                         Save
                                                     </button>
                                                 </form>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
+                        </div>
+                        <div class="p-6 w-full">
+                            {{$appointmentsDates->links()}}
                         </div>
                     </div>
                 </div>

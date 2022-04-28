@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/doctor-types/{doctorType}/delete', [DoctorTypeController::class, 'destroy'])->name('doctor.type.destroy');
     //Appointments
     Route::get('/appointments-list/{id}', [AppointmentController::class, 'show'])->name('appointment.show');
-    Route::post('/appointments-list', [AppointmentController::class, 'store'])->name('appointment.store');
+    Route::put('/appointments-list/{appointment}', [AppointmentController::class, 'update'])->name('appointment.update');
 
 });
 

@@ -13,9 +13,9 @@ class Appointment extends Model
     protected $fillable = [
         'doctor_id',
         'approved',
-        'date',
         'time_slot_id',
-        'patient_name'
+        'patient_name',
+        'date'
     ];
 
     public function doctor(): BelongsTo
