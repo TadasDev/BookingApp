@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight w-1/2">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-center ">
             {{ __('Manage Doctors') }}
         </h2>
-        <div class="flex justify-end">
+        <div class=" font-semibold text-xl text-gray-800 leading-tight pl-2">
             <a href="{{route('doctor.create')}}">
                 <button
                     class="bg-transparent hover:bg-green-600 text-blue-700 font-semibold hover:text-white p-1 border border-blue-500 hover:border-transparent rounded">
@@ -17,7 +17,7 @@
     <div class="py-2 ">
         <div class="max-w-full mx-auto sm:px-6 lg:px-8  ">
             <div class="shadow-sm sm:rounded-lg w-full">
-                <div class="min-h-screen bg-white ">
+                <div class="min-h-full bg-white ">
                     <div class="flex flex-col">
 
                         <x-validation-errors/>
@@ -28,8 +28,7 @@
                             <div class="py-4 inline-block min-w-full ">
                                 <div class="overflow-hidden">
                                     <table class="w-full text-center ">
-                                        <thead class="border-b p-6"
-                                               style=" background-color: #18324e"
+                                        <thead class="border-b p-6 bg-emerald-900 "
                                         >
                                         <tr>
                                             <th scope="col"

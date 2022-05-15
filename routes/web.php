@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     //doctors CRUD
     Route::get('/doctors-list', [DoctorController::class, 'index'])->name('doctor.index');
     Route::get('/doctors-list/create', [DoctorController::class, 'create'])->name('doctor.create');
-    Route::post('/doctors-list/create', [DoctorController::class, 'store'])->name('doctor.store');
+    Route::post('/doctors-list/store', [DoctorController::class, 'store'])->name('doctor.store');
     Route::get('/doctors-list/{id}', [DoctorController::class, 'edit'])->name('doctor.edit');
     Route::put('/doctors-list/{doctor}/update', [DoctorController::class, 'update'])->name('doctor.update');
     Route::delete('/doctors-list/{id}', [DoctorController::class, 'destroy'])->name('doctor.destroy');
@@ -40,6 +40,11 @@ Route::middleware('auth')->group(function () {
     //Appointments
     Route::get('/appointments-list/{id}', [AppointmentController::class, 'show'])->name('appointment.show');
     Route::put('/appointments-list/{appointment}', [AppointmentController::class, 'update'])->name('appointment.update');
+
+    //try out page
+    Route::get('/appointments', function (){
+        return view('appointments.example');
+    });
 
 });
 

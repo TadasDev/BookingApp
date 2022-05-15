@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-screen mx-auto sm:px-6 lg:px-8 ">
+    <div class="py-6">
+        <div class="max-w-screen mx-auto sm:px-6 lg:px-2 ">
             <div class="shadow-sm sm:rounded-lg ">
                 <div class="min-h-screen bg-white ">
 
@@ -14,14 +14,14 @@
 
                     <x-success-message/>
 
-                    <div class=" p-6 h-screen ">
+                    <div class="h-screen ">
                         <div class="max-h-screen flex flex-wrap ">
-                            <div class="w-full flex flex-wrap justify-center ">
+                            <div class="flex flex-wrap justify-center max-h-screen ">
                                 @foreach($appointmentsDates as $appointmentsDate)
 
                                     <x-time-slots/>
 
-                                    <div class="border border-gray-200 text-center text-xl bg-gray-100 w-2/12 pb-10">
+                                    <div class="border-t border-l border-gray-200 text-center text-xl w-2/12 ">
                                         {{Carbon\Carbon::parse($appointmentsDate->date)->dayName}}
                                         {{$appointmentsDate->date}}
                                         <div class="w-full">
@@ -51,7 +51,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="p-6 w-full">
+                        <div class="p-6 w-full flex flex-end">
                             {{$appointmentsDates->links()}}
                         </div>
                     </div>

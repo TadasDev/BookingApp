@@ -31,7 +31,7 @@ class DoctorTypeController extends Controller
      */
     public function store(DocotorTypeRequest $request): RedirectResponse
     {
-        DoctorType::create(['name' => $request->name,]);
+        DoctorType::create($request->validated());
 
         return redirect()->back()->with('message', ' Type created  successfully');
     }

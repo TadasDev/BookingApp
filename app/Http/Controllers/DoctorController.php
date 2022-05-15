@@ -6,15 +6,24 @@ use App\Http\Requests\Auth\DoctorStoreRequest;
 use App\Http\Requests\Auth\DoctorUpdateRequest;
 use App\Models\Doctor;
 use App\Models\DoctorType;
+use App\Services\AppointmentsSlotsGenerator;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
-use Symfony\Component\Console\Input\Input;
 
 class DoctorController extends Controller
 {
+
+    private $appointmentsSlotsGenerator;
+
+    public function __construct(
+        AppointmentsSlotsGenerator $appointmentsSlotsGenerator
+    )
+    {
+        $this->appointmentsSlotsGenerator = $appointmentsSlotsGenerator;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -60,6 +69,8 @@ class DoctorController extends Controller
                 'file_path' => $path
             ]);
         }
+
+        $this->appointmentsSlotsGenerator->generateDates($doctor);
 
         return redirect('/doctors-list')->with('message', 'Created doctor successfully');
 

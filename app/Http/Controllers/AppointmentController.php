@@ -79,7 +79,7 @@ class AppointmentController extends Controller
      */
     public function update(AppointmentUpdateRequest $request, Appointment $appointment)
     {
-        $appointment->update(['patient_name' => $request->patient_name,]);
+        $appointment->update($request->validated());
 
         return redirect()->back()->with('message', 'booked successfully');
 
