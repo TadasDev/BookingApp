@@ -9,7 +9,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 
 class AppointmentController extends Controller
 {
@@ -20,7 +19,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-//
+//D
     }
 
     /**
@@ -89,10 +88,15 @@ class AppointmentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->patient_name = null;
+        $appointment->save();
+
+        return redirect()->back()->with('message', 'removed successfully');
+
     }
 }

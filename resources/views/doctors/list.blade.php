@@ -93,7 +93,6 @@
                                                         @csrf
                                                         @method('DELETE')
                                                         <button
-
                                                             class=" pl-3 bg-transparent hover:bg-red-500 text-blue-700
                                                             font-semi-bold hover:text-white p-2 border border-blue-500
                                                             hover:border-transparent rounded">
