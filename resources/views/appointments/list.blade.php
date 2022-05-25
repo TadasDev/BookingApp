@@ -36,11 +36,8 @@
                                                     <input
                                                         name="patient_name"
                                                         value="{{$appointment->patient_name}}"
-                                                        @if( is_null($appointment->patient_name) )
-                                                            class="hover:border-blue-900 w-full bg-green-100 text-black-700 font-semi-bold p-2 border rounded"
-                                                        @else
-                                                            class="hover:border-blue-900 w-full bg-red-50 text-black-700 font-semi-bold p-2 border rounded"
-                                                        @endif>
+                                                        class="{{is_null($appointment->patient_name) ? 'bg-green-100':'bg-red-100'}}
+                                                         hover:border-blue-900 w-4/5  text-black-700 font-semi-bold p-2 border rounded">
                                                     <button
                                                         class="w-1/5
                                                          hover:border-blue-900 hover:text-blue-900
@@ -65,10 +62,10 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                    <div class="p-3 w-full flex  ">
+                                        {{$appointmentsDates->links()}}
+                                    </div>
                             </div>
-                        </div>
-                        <div class="p-6 w-full flex flex-end">
-                            {{$appointmentsDates->links()}}
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminViewController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\DoctorTypeController;
 use Illuminate\Support\Facades\Route;
@@ -16,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware('admin')->group(function (){
-        Route::get('/admin-dashboard',[AdminViewController::class,'index'])->name('admin.index');
+Route::middleware('admin')->group(function () {
+    Route::get('/admin-dashboard', [AdminViewController::class, 'index'])->name('admin.index');
 });
 
 
@@ -41,17 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/appointments-list/{id}', [AppointmentController::class, 'show'])->name('appointment.show');
     Route::put('/appointments-list/{appointment}', [AppointmentController::class, 'update'])->name('appointment.update');
     Route::delete('/appointments-list/{id}', [AppointmentController::class, 'destroy'])->name('appointment.delete');
-
-    //try out page
-    Route::get('/appointments', function (){
-        return view('appointments.example');
-    });
-
+    //Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'getNextAvailableAppointment'])->name('dashboard');
 });
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

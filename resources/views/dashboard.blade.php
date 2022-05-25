@@ -6,15 +6,21 @@
     </x-slot>
 
     <div class="p-6">
-        <div class=" ">
-
-            <x-validation-errors/>
-
-            <x-success-message/>
-
-            <div class="shadow-sm sm:rounded-lg ">
-                <div class="min-h-screen bg-white ">
-                    Tadas
+        <div class="max-w-screen mx-auto sm:px-6 lg:px-0 ">
+            <div class="shadow-sm bg-white h-screen">
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 ">
+                        @foreach($doctorTypes as $doctorType)
+                        <div class="text-xl border-2 border-gray-300 rounded-xl p-6  bg-gray-100 text-center">
+                            <div class="">
+                                {{$doctorType->name}}
+                            </div>
+                            <div class="">
+                                Next available date:
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

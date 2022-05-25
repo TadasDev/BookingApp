@@ -56,11 +56,7 @@ class DoctorController extends Controller
      */
     public function store(DoctorStoreRequest $request)
     {
-        $doctor = Doctor::create([
-            'name' => $request->name,
-            'bio' => $request->bio,
-            'field_of_expertise' => $request->field_of_expertise,
-        ]);
+        $doctor = Doctor::create($request->validated());
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
