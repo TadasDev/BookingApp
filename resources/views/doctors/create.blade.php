@@ -28,12 +28,12 @@
                                               class="w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "></textarea>
                                 </div>
                                 <div class="mt-4 px-4 ">
-                                    <x-label for="field_of_expertise" :value="__('Field of Expertise')"/>
+                                    <x-label for="doctors_type_id" :value="__('Doctors type')"/>
                                     <div class="mb-3 xl:w-96">
-                                        <select id="field_of_expertise" name="field_of_expertise"
+                                        <select id="doctors_type_id" name="doctors_type_id"
                                                 class="w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ">
                                             @foreach($types as $type)
-                                                <option value="{{$type->name}}">{{$type->name}}</option>
+                                                <option value="{{$type->id}}">{{$type->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -41,7 +41,6 @@
                                 <div class="mt-4 px-4 ">
                                     <x-file-upload/>
                                 </div>
-
                                 <div class="mt-4 flex justify-end px-4">
                                     <x-button>Submit</x-button>
                                 </div>

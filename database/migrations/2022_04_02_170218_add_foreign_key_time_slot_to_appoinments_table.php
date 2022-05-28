@@ -15,7 +15,6 @@ class AddForeignKeyTimeSlotToAppoinmentsTable extends Migration
     {
         Schema::table('appointments', function (Blueprint $table) {
             $table->foreignId('time_slot_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->dropColumn('time_slot');
         });
     }
 

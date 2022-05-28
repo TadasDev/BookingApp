@@ -16,7 +16,7 @@ class CreateDoctorsTypesTable extends Migration
         Schema::create('doctors_types', function (Blueprint $table) {
             $table->id();
             $table->foreignId('doctor_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->string('type');
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class DoctorsFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'bio' => $this->faker->text(20),
-            'field_of_expertise' =>$this->faker->text(8)
+            'doctor_type_id' =>$this->faker->num(8)
         ];
     }
 }

@@ -15,8 +15,9 @@
                             <div class="">
                                 {{$doctorType->name}}
                             </div>
-                            <div class="">
+                            <div class="text-black">
                                 Next available date:
+                                2022-05-27
                             </div>
                         </div>
                         @endforeach

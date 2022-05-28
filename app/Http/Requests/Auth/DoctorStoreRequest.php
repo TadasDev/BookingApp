@@ -26,8 +26,8 @@ class DoctorStoreRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:25'],
             'bio' => ['required', 'string', 'max:255'],
-            'field_of_expertise' => ['required', 'string', 'max:64'],
-            'image' => ['mimes:jpg,jpeg,png|max:400']
+            'image' => ['mimes:jpg,jpeg,png|max:400'],
+            'doctors_type_id'=>['required',]
         ];
     }
 }
