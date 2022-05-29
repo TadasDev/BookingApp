@@ -33,7 +33,7 @@
                                         <tr>
                                             <th scope="col"
                                                 class="text-sm font-medium text-white px-6 py-4 sm:block hidden ">
-                                                ID
+                                                No.
                                             </th>
                                             <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                                 Name
@@ -44,7 +44,7 @@
                                             </th>
                                             <th scope="col"
                                                 class="text-sm font-medium text-white px-6 py-4 ">
-                                                Field of expertise
+                                                Type of doctor
                                             </th>
                                             <th scope="col"
                                                 class="text-sm font-medium text-white px-6 py-4">
@@ -56,7 +56,7 @@
                                         @foreach($doctors as $doctor )
                                             <tr class="bg-white border-b ">
                                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap sm:block hidden ">
-                                                    {{$doctor->id}}
+                                                    {{$loop->iteration}}
                                                 </td>
                                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                     {{$doctor->name}}
@@ -74,7 +74,7 @@
 
                                                 </td>
                                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap  ">
-                                                    {{$doctor->field_of_expertise}}
+                                                    {{$doctor->type}}
                                                 </td>
                                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex justify-center">
                                                     <a href="{{route('doctor.edit',['id'=>$doctor->id])}}">
@@ -126,6 +126,5 @@
                 {{$doctors->withQueryString()->links()}}
             </div>
         </div>
-    </div>
     </div>
 </x-app-layout>

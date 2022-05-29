@@ -4,14 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class DoctorType extends Model
 {
     use HasFactory;
 
-    protected $table = 'doctors_types';
+    protected $table = 'doctor_types';
 
     protected $fillable = [
-        'name',
+        'name'
     ];
+
+    public function doctors(): HasMany
+    {
+        return $this->hasMany(Doctor::class);
+    }
 }

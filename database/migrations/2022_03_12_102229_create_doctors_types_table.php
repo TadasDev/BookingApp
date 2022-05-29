@@ -13,7 +13,7 @@ class CreateDoctorsTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctors_types', function (Blueprint $table) {
+        Schema::create('doctor_types', function (Blueprint $table) {
             $table->id();
             $table->foreignId('doctor_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateDoctorsTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doctors_types');
+        Schema::dropIfExists('doctor_types');
     }
 }

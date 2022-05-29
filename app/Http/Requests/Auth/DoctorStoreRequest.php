@@ -27,7 +27,7 @@ class DoctorStoreRequest extends FormRequest
             'name' => ['required', 'string', 'max:25'],
             'bio' => ['required', 'string', 'max:255'],
             'image' => ['mimes:jpg,jpeg,png|max:400'],
-            'doctors_type_id'=>['required',]
+            'doctor_type_id'=>['required',]
         ];
     }
 }

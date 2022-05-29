@@ -17,7 +17,9 @@
                             </div>
                             <div class="text-black">
                                 Next available date:
-                                2022-05-27
+                                @foreach( $doctorType->doctors as $doctor)
+                                    {{$doctor->appointments()->where('patient_name',null)->first()->date}}
+                                @endforeach
                             </div>
                         </div>
                         @endforeach

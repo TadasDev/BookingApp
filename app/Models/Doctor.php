@@ -13,7 +13,7 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'bio',
-        'doctors_type_id',
+        'doctor_type_id',
     ];
 
     public function image(): HasMany
@@ -24,6 +24,11 @@ class Doctor extends Model
     public function appointments(): HasMany
     {
         return $this->hasMany(Appointment::class)->orderBy('time_slot_id');
+    }
+
+    public function type(): HasMany
+    {
+        return $this->hasMany(DoctorType::class);
     }
 
 }

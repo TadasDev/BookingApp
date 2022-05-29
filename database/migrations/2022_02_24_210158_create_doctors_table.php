@@ -17,7 +17,6 @@ class CreateDoctorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('bio');
-            $table->string('field_of_expertise');
             $table->timestamps();
         });
     }

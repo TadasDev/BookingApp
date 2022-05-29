@@ -28,9 +28,9 @@
                                               class="w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "></textarea>
                                 </div>
                                 <div class="mt-4 px-4 ">
-                                    <x-label for="doctors_type_id" :value="__('Doctors type')"/>
+                                    <x-label for="doctor_type_id" :value="__('Doctors type')"/>
                                     <div class="mb-3 xl:w-96">
-                                        <select id="doctors_type_id" name="doctors_type_id"
+                                        <select id="doctor_type_id" name="doctor_type_id"
                                                 class="w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ">
                                             @foreach($types as $type)
                                                 <option value="{{$type->id}}">{{$type->name}}</option>
