@@ -11,17 +11,19 @@
                 <div class="p-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 ">
                         @foreach($doctorTypes as $doctorType)
-                        <div class="text-xl border-2 border-gray-300 rounded-xl p-6  bg-gray-100 text-center">
-                            <div class="">
-                                {{$doctorType->name}}
+                            <div class="text-xl border-2 border-gray-300 rounded-xl p-6  bg-gray-100 text-center">
+                                <div class="">
+                                    {{$doctorType->name}}
+                                </div>
+                                <div class="text-black">
+                                    Next available date:
+                                    @if($doctorType->doctors)
+                                        @foreach( $doctorType->doctors as $doctor)
+                                            {{$doctor->appointments()->where('patient_name',null)->first()->date}}
+                                        @endforeach
+                                    @endif
+                                </div>
                             </div>
-                            <div class="text-black">
-                                Next available date:
-                                @foreach( $doctorType->doctors as $doctor)
-                                    {{$doctor->appointments()->where('patient_name',null)->first()->date}}
-                                @endforeach
-                            </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>

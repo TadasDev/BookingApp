@@ -74,7 +74,7 @@
 
                                                 </td>
                                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap  ">
-                                                    {{$doctor->type}}
+                                                    {{$doctor->doctorType->name}}
                                                 </td>
                                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex justify-center">
                                                     <a href="{{route('doctor.edit',['id'=>$doctor->id])}}">

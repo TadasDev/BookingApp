@@ -13,9 +13,9 @@ class Appointment extends Model
     protected $fillable = [
         'doctor_id',
         'approved',
+        'date',
         'time_slot_id',
-        'patient_name',
-        'date'
+        'patient_name'
     ];
 
     public function doctors(): HasMany

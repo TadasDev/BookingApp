@@ -14,7 +14,9 @@
             <div class="shadow-sm sm:rounded-lg max-w-7xl">
                 <div class="min-h-screen bg-white">
                     <div class="overflow-hidden">
-                        <div class="mt-4 px-4 text-lg">Create type</div>
+                        <div class="mt-4 px-4 text-lg">
+                            Create type
+                        </div>
                         <div class="sm:block sm:flex sm:justify-center">
                             <div class="w-full">
                                 <form method="POST" action="{{route('doctor.type.store')}}">

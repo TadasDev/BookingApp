@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\DocotorTypeRequest;
+use App\Http\Requests\Auth\DoctorTypeRequest;
 use App\Models\DoctorType;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -26,10 +26,10 @@ class DoctorTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param DocotorTypeRequest $request
+     * @param DoctorTypeRequest $request
      * @return RedirectResponse
      */
-    public function store(DocotorTypeRequest $request): RedirectResponse
+    public function store(DoctorTypeRequest $request): RedirectResponse
     {
         DoctorType::create($request->validated());
 
@@ -39,11 +39,11 @@ class DoctorTypeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param DocotorTypeRequest $request
+     * @param DoctorTypeRequest $request
      * @param DoctorType $doctorType
      * @return RedirectResponse
      */
-    public function update(DocotorTypeRequest $request, DoctorType $doctorType): RedirectResponse
+    public function update(DoctorTypeRequest $request, DoctorType $doctorType): RedirectResponse
     {
 
         $doctorType->update($request->only(['name']));

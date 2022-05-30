@@ -26,9 +26,8 @@ class Doctor extends Model
         return $this->hasMany(Appointment::class)->orderBy('time_slot_id');
     }
 
-    public function type(): HasMany
+    public function doctorType()
     {
-        return $this->hasMany(DoctorType::class);
+       return $this->belongsTo(DoctorType::class);
     }
-
 }
