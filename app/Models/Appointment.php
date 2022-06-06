@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Appointment extends Model
 {
@@ -18,8 +18,13 @@ class Appointment extends Model
         'patient_name'
     ];
 
-    public function doctors(): HasMany
+    public function doctor(): BelongsTo
     {
-        return $this->hasMany(Doctor::class);
+        return $this->belongsTo(Doctor::class);
+    }
+
+    public function timeSlot(): BelongsTo
+    {
+        return $this->belongsTo(TimeSlot::class);
     }
 }

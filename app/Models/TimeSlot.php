@@ -13,4 +13,7 @@ class TimeSlot extends Model
         'time',
         'active'
     ];
+
+
+
 }

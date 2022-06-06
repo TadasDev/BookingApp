@@ -1,12 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-center ">
+        <h2 class="font-semi-bold text-xl text-gray-800 leading-tight flex items-center justify-center ">
             {{ __('Manage Doctors') }}
         </h2>
-        <div class=" font-semibold text-xl text-gray-800 leading-tight pl-2">
+        <div class=" font-semi-bold text-xl text-gray-800 leading-tight pl-2">
             <a href="{{route('doctor.create')}}">
                 <button
-                    class="bg-transparent hover:bg-green-600 text-blue-700 font-semibold hover:text-white p-1 border border-blue-500 hover:border-transparent rounded">
+                    class="bg-transparent hover:bg-green-600 text-blue-700 font-semi-bold hover:text-white p-1 border border-blue-500 hover:border-transparent rounded">
                     Add doctor
                 </button>
             </a>
@@ -81,7 +81,7 @@
                                                         <button
                                                             class="
                                                             bg-transparent hover:bg-green-600 text-blue-700
-                                                            font-semibold hover:text-white
+                                                            font-semi-bold hover:text-white
                                                             p-2 border border-blue-500
                                                             hover:border-transparent rounded">
                                                             Edit
@@ -104,7 +104,7 @@
                                                             <button
                                                                 class=" pr-3
                                                             bg-transparent hover:bg-green-600 text-blue-700
-                                                            font-semibold hover:text-white
+                                                            font-semi-bold hover:text-white
                                                             p-2 border border-blue-500
                                                             hover:border-transparent rounded">
                                                                 Schedule

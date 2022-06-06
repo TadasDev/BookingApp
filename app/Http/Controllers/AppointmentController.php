@@ -13,37 +13,6 @@ use Illuminate\Http\Request;
 class AppointmentController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|View
-     */
-    public function index()
-    {
-//D
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param int $id
@@ -56,17 +25,6 @@ class AppointmentController extends Controller
         $appointmentsDates = Appointment::distinct()->get('date')->paginate(10);
 
         return view('appointments.list', compact('appointments', 'appointmentsDates'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
