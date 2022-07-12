@@ -28,8 +28,7 @@
                             <div class="py-4 inline-block min-w-full ">
                                 <div class="overflow-hidden">
                                     <table class="w-full text-center ">
-                                        <thead class="border-b p-6 bg-emerald-900 "
-                                        >
+                                        <thead class="border-b p-6 bg-emerald-900 ">
                                         <tr>
                                             <th scope="col"
                                                 class="text-sm font-medium text-white px-6 py-4 sm:block hidden ">

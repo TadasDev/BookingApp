@@ -29,6 +29,8 @@
                                                 </div>
                                             </a>
                                         @endforeach
+                                    @else
+                                        <p class="text-l">No Doctors added yet</p>
                                     @endif
                                 </div>
                             </div>

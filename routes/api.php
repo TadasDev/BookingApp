@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\PatientController;
+use App\Http\Controllers\Api\PatientApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 ;
 //Public Routes
-Route::apiResource('/patients', PatientController::class)->only(['index','show']);
+Route::apiResource('/patient', PatientApiController::class)->only(['index','show']);
 
 
 //Protected Routes
 Route::group(['middleware'=>'auth:sanctum'],function (){
-    Route::apiResource('/patients', PatientController::class)->only(['store','update','destroy',]);
+    Route::apiResource('/patient', PatientApiController::class)->only(['store','update','destroy',]);
 
 });
 
